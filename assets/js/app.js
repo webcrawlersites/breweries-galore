@@ -12,7 +12,6 @@ const getBeerData = (cityName) => {
         }
     })
     .then(res => {
-        console.log(res);
         res.forEach(brewery => {
             createBreweryCard(brewery.name, brewery.street, brewery.city, brewery.postal_code, brewery.website_url, brewery.phone);
         });

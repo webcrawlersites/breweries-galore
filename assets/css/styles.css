@@ -6,7 +6,7 @@
     --black: #171717;
     --blue: #2a2d40;
     --yellow: #F2A950;
-    --light-yellow: #d6b489;
+    --light-yellow: #f7d7b5;
     --fontFamily: 'Raleway', sans-serif;
 }
 
@@ -35,6 +35,7 @@ header {
 }
 
 header p {
+    max-width: 95%;
     color: var(--white);
     font-size: 20px;
     padding: 2rem 0;
@@ -43,11 +44,9 @@ header p {
 }
 
 .form-container {
-    max-width: 100%;
     padding-bottom: 2rem;
     text-align: center;
-    width: 40%;
-    max-width: 100%;
+    max-width: 40%;
     margin: 0 auto;
 }
 
@@ -104,4 +103,40 @@ header p {
 
 .info-title {
     font-weight: bold;
+}
+
+footer {
+    padding: 2rem 0;
+    max-width: 100%;
+    text-align: center;
+    color: var(--white);
+}
+
+@media screen and (max-width: 1024px) {
+    .form-container {
+        max-width: 70%;
+    }
+
+    #brewery-container {
+        max-width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        max-width: 90%;
+    }
+
+    .form-container form {
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
+
+    #brewery-container {
+        max-width: 95%;
+        grid-template-columns: 1fr;
+        grid-gap: 1rem;
+    }
 }
