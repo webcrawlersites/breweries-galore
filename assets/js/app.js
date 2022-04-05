@@ -35,7 +35,9 @@ const createBreweryCard = (name, street, city, zip, website, phone) => {
 
 searchBtn.addEventListener('click', function(e) {
     e.preventDefault;
-    breweryContainer.innerHTML = '';
+    if (breweryContainer.firstChild) {
+        breweryContainer.innerHTML = '';
+    }
     let searchQuery = document.getElementById('city-input').value;
     
     getBeerData(searchQuery);
