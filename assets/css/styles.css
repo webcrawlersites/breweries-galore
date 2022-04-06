@@ -17,7 +17,11 @@ html, body {
 
 body {
     background-color: var(--blue);
+    background-image: url('../images/bg.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 input, p, span, label, button, li, h1, h2, h3 {
