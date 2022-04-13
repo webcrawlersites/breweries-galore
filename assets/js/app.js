@@ -15,6 +15,9 @@ const getBeerData = (cityName) => {
         res.forEach(brewery => {
             createBreweryCard(brewery.name, brewery.street, brewery.city, brewery.postal_code, brewery.website_url, brewery.phone);
         });
+    })
+    .catch((error) => {
+        console.log(error)
     });
 }
 
@@ -33,8 +36,7 @@ const createBreweryCard = (name, street, city, zip, website, phone) => {
 
 }
 
-searchBtn.addEventListener('click', function(e) {
-    e.preventDefault;
+searchBtn.addEventListener('click', function() {
     if (breweryContainer.firstChild) {
         breweryContainer.innerHTML = '';
     }
