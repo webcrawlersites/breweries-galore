@@ -1,6 +1,9 @@
 const searchBtn = document.getElementById('beer-search-button');
 const breweryContainer = document.getElementById('brewery-container');
+let searchQuery = document.getElementById('city-input');
 
+
+// Fetch data from Brewery API
 const getBeerData = (cityName) => {
     const beerApi = `https://api.openbrewerydb.org/breweries?by_city=${encodeURIComponent(cityName)}`;
     fetch(beerApi)
@@ -21,6 +24,7 @@ const getBeerData = (cityName) => {
     });
 }
 
+// Create the Brewery Card
 const createBreweryCard = (name, street, city, zip, website, phone) => {
     let breweryCard = `
     <div class="brewery-card">
@@ -36,11 +40,32 @@ const createBreweryCard = (name, street, city, zip, website, phone) => {
 
 }
 
+
+// button event listener
 searchBtn.addEventListener('click', function() {
     if (breweryContainer.firstChild) {
         breweryContainer.innerHTML = '';
     }
-    let searchQuery = document.getElementById('city-input').value;
+    let queryValue = searchQuery.value;
     
-    getBeerData(searchQuery);
+    getBeerData(queryValue);
 });
+
+
+// Keyboard event listener
+document.addEventListener("keyup", function(event) {
+
+    if (event.keyCode == 13) {
+
+        if (breweryContainer.firstChild) {
+            breweryContainer.innerHTML = '';
+        }
+        let queryValue = searchQuery.value;
+        
+        getBeerData(queryValue);
+    }
+
+});
+
+
+
